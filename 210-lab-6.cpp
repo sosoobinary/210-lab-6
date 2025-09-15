@@ -10,33 +10,35 @@ void outputArrayData(double* a);
 double sumArray(double* a);
 
 int main() {
-    double* fullArray;
+    double* fullArray = new double[SIZE];
 
     enterArrayData(fullArray);
     outputArrayData(fullArray);
-    sumArray(fullArray);
+    double sum = sumArray(fullArray);
+    cout << "Sum of values: " << sum;
+
+    delete [] fullArray;
+
+    return 0;
 }
 
 void enterArrayData(double* a) {
-    a = new double[SIZE];
-    double numInput;
     cout << "Data entry for the array:" << endl;
     for(int i = 0; i < SIZE; i++) {
         cout << "    > Element #" << i << ": ";
-        while(!(cin >> numInput)){
+        while(!(cin >> *(a + i))){
             cout << "Please enter a double for Element #" << i << ": ";
             cin.clear();
             cin.ignore(123, '\n');
         }
-        a[i] = numInput;
     }
-    cout << "\nData entry complete." << endl;
+    cout << "Data entry complete." << endl;
 }
 
 void outputArrayData(double* a) {
     cout << "Outputting array elements: ";
     for(int i = 0; i < SIZE; i++) {
-        cout << a[i] << " ";
+        cout << *(a + i) << " ";
     }
     cout << endl;
 }
@@ -44,7 +46,7 @@ void outputArrayData(double* a) {
 double sumArray(double* a) {
     double sum = 0;
     for(int i = 0; i < SIZE; i++) {
-        sum += a[i];
+        sum += *(a + i);
     }
     return sum;
 }
