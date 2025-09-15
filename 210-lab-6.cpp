@@ -22,6 +22,8 @@ int main() {
     return 0;
 }
 
+// enterArrayData() allows user to input doubles into a dynamic array
+// arguments: double*
 void enterArrayData(double* a) {
     cout << "Data entry for the array:" << endl;
     for(int i = 0; i < SIZE; i++) {
@@ -35,6 +37,8 @@ void enterArrayData(double* a) {
     cout << "Data entry complete." << endl;
 }
 
+// outputArrayData() outputs doubles of a dynamic array
+// arguments: double*
 void outputArrayData(double* a) {
     cout << "Outputting array elements: ";
     for(int i = 0; i < SIZE; i++) {
@@ -43,6 +47,9 @@ void outputArrayData(double* a) {
     cout << endl;
 }
 
+// sumArray() calculates sum of all elements in the provided dynamic array
+// arguments: double*
+// returns: a double totalling the sum
 double sumArray(double* a) {
     double sum = 0;
     for(int i = 0; i < SIZE; i++) {
