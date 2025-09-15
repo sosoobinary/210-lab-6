@@ -12,5 +12,14 @@ void enterArrayData(double* a) {
     for(int i = 0; i < SIZE; i++) {
         cout << "    > Element #" << i << ": ";
         cin >> numInput;
+        a[i] = numInput;
+    }
+    cout << "\nData entry complete." << endl;
+}
+
+void outputArrayData(double* a) {
+    cout << "Outputting array elements: ";
+    for(int i = 0; i < SIZE; i++) {
+        cout << a[i] << " ";
     }
 }
